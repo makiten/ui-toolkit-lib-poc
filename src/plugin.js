@@ -11,6 +11,11 @@ const requireComponent = require.context(
   /\w+\.(vue|js)$/
 )
 
+Vue.use(Vuetify, {
+  iconfont: 'md',
+  theme
+})
+
 requireComponent.keys().forEach(filename => {
   const componentConfig = requireComponent(filename)
 
