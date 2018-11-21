@@ -11,18 +11,13 @@ const requireComponent = require.context(
   /\w+\.(vue|js)$/
 )
 
-Vue.use(Vuetify, {
-  iconfont: 'md',
-  theme
-})
-
 requireComponent.keys().forEach(filename => {
   const componentConfig = requireComponent(filename)
 
   const componentName = upperFirst(
     camelCase(
       // Strip the leading `./` and extension from the filename
-      fileName.replace(/^\.\/(.*)\.\w+$/, '$1')
+      filename.replace(/^\.\/(.*)\.\w+$/, '$1')
     )
   )
 
