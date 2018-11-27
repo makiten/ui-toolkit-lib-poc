@@ -15,8 +15,8 @@
       light
       tile
       flat
-      ma-2
-      v-if="isValidForm !== null && !isValidForm"
+      class="ma-2"
+      v-if="!isValidForm"
     >
       <v-card-text>
         This email address and/or password was not recognized. Please try again or check with your account
@@ -28,7 +28,7 @@
       label="E-mail Address"
       background-color="white"
       :placeholder="emailPlaceholder"
-      :error="isValidForm !== null && !isValidForm"
+      :error="!isValidForm"
       full-width
       outline
     />
@@ -39,7 +39,7 @@
       :append-icon="showPassword ? 'visibility_off' : 'visibility'"
       :type="showPassword ? 'text' : 'password'"
       :placeholder="passwordPlaceholder"
-      :error="isValidForm !== null && !isValidForm"
+      :error="!isValidForm"
       password
       full-width
       outline
@@ -56,8 +56,7 @@
     >
       {{ loginButtonText }}
     </v-btn>
-  </v-form
-    class="text-center">
+  </v-form>
 </template>
 
 <script>
@@ -106,7 +105,7 @@
     },
     data () {
       return {
-        isValidForm: null,
+        isValidForm: true,
         showPassword: false
       }
     }
