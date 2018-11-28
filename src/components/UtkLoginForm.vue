@@ -1,61 +1,62 @@
 <template>
   <v-form
-    class="text-center"
     v-model="isValidForm"
   >
-    <v-img
-      :src="imageSrc"
-      :width="imageWidth"
-      :height="imageHeight"/>
+    <v-container align-center>
+      <v-img
+        :src="imageSrc"
+        :width="imageWidth"
+        :height="imageHeight"/>
 
-    <h1>{{ formTitle }}</h1>
+      <h1>{{ formTitle }}</h1>
 
-    <v-card
-      color="error"
-      light
-      tile
-      flat
-      class="ma-2"
-      v-if="!isValidForm"
-    >
-      <v-card-text>
-        This email address and/or password was not recognized. Please try again or check with your account
-        administrator.
-      </v-card-text>
-    </v-card>
+      <v-card
+        color="error"
+        light
+        tile
+        flat
+        class="my-2"
+        v-if="!isValidForm"
+      >
+        <v-card-text>
+          This email address and/or password was not recognized. Please try again or check with your account
+          administrator.
+        </v-card-text>
+      </v-card>
 
-    <v-text-field
-      label="E-mail Address"
-      background-color="white"
-      :placeholder="emailPlaceholder"
-      :error="!isValidForm"
-      full-width
-      outline
-    />
+      <v-text-field
+        label="E-mail Address"
+        background-color="white"
+        :placeholder="emailPlaceholder"
+        :error="!isValidForm"
+        full-width
+        outline
+      />
 
-    <v-text-field
-      label="Password"
-      background-color="white"
-      :append-icon="showPassword ? 'visibility_off' : 'visibility'"
-      :type="showPassword ? 'text' : 'password'"
-      :placeholder="passwordPlaceholder"
-      :error="!isValidForm"
-      password
-      full-width
-      outline
-      @click:append="showPassword = !showPassword"
-    />
+      <v-text-field
+        label="Password"
+        background-color="white"
+        :append-icon="showPassword ? 'visibility_off' : 'visibility'"
+        :type="showPassword ? 'text' : 'password'"
+        :placeholder="passwordPlaceholder"
+        :error="!isValidForm"
+        password
+        full-width
+        outline
+        @click:append="showPassword = !showPassword"
+      />
 
-    <v-btn
-      color="primary"
-      depressed
-      round
-      block
-      dark
-      @click=""
-    >
-      {{ loginButtonText }}
-    </v-btn>
+      <v-btn
+        color="primary"
+        depressed
+        round
+        block
+        dark
+        @click=""
+      >
+        {{ loginButtonText }}
+      </v-btn>
+    </v-container>
   </v-form>
 </template>
 
