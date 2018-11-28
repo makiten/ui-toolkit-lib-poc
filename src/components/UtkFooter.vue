@@ -12,7 +12,7 @@
         xs12
         md2
       >
-        &copy; {{ copyrightYear }}
+        <span>&copy; {{ copyrightYear }}</span>
       </v-flex>
       <v-btn
         v-for="link in links"

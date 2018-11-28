@@ -11,7 +11,7 @@
         :height="imageHeight"/>
     </slot>
 
-    <slot name="title">
+    <slot>
       <h1 class="text-center">{{ formTitle }}</h1>
     </slot>
 
