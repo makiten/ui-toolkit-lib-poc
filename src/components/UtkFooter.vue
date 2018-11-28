@@ -3,27 +3,20 @@
     :color="color"
     :app="app"
   >
-    <v-layout
-      justify-center
-      row
-      wrap
+
+    <span>&copy; {{ copyrightYear }}</span>
+
+    <v-spacer/>
+
+    <v-btn
+      v-for="link in links"
+      :key="link.text"
+      :color="linkColor"
+      :to="link.href"
+      flat
     >
-      <v-flex
-        xs12
-        md2
-      >
-        <span>&copy; {{ copyrightYear }}</span>
-      </v-flex>
-      <v-btn
-        v-for="link in links"
-        :key="link.text"
-        :color="linkColor"
-        :to="link.href"
-        flat
-      >
-        {{ link.text }}
-      </v-btn>
-    </v-layout>
+      {{ link.text }}
+    </v-btn>
 
   </v-footer>
 </template>
