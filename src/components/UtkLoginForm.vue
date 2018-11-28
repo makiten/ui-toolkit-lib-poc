@@ -2,27 +2,30 @@
   <v-form
     v-model="isValidForm"
   >
-    <v-container align-center>
+    <v-container>
       <v-img
+        class="ml-auto mr-auto"
         :src="imageSrc"
         :width="imageWidth"
         :height="imageHeight"/>
 
       <h1>{{ formTitle }}</h1>
 
-      <v-card
-        color="error"
-        light
-        tile
-        flat
-        class="my-2"
-        v-if="!isValidForm"
-      >
-        <v-card-text>
-          This email address and/or password was not recognized. Please try again or check with your account
-          administrator.
-        </v-card-text>
-      </v-card>
+      <div
+        class="my-2">
+        <v-card
+          color="error"
+          light
+          tile
+          flat
+          v-if="!isValidForm"
+        >
+          <v-card-text>
+            This email address and/or password was not recognized. Please try again or check with your account
+            administrator.
+          </v-card-text>
+        </v-card>
+      </div>
 
       <v-text-field
         label="E-mail Address"
