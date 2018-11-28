@@ -3,13 +3,17 @@
     v-model="isValidForm"
     lazy-validation
   >
-    <v-img
-      class="ml-auto mr-auto"
-      :src="imageSrc"
-      :width="imageWidth"
-      :height="imageHeight"/>
+    <slot name="hero-image">
+      <v-img
+        class="ml-auto mr-auto"
+        :src="imageSrc"
+        :width="imageWidth"
+        :height="imageHeight"/>
+    </slot>
 
-    <h1 class="text-center">{{ formTitle }}</h1>
+    <slot name="title">
+      <h1 class="text-center">{{ formTitle }}</h1>
+    </slot>
 
     <div
       class="my-2">
@@ -29,6 +33,7 @@
 
     <v-text-field
       label="E-mail Address"
+      color="secondary"
       background-color="white"
       :placeholder="emailPlaceholder"
       full-width
@@ -37,6 +42,7 @@
 
     <v-text-field
       label="Password"
+      color="secondary"
       background-color="white"
       :append-icon="showPassword ? 'visibility_off' : 'visibility'"
       :type="showPassword ? 'text' : 'password'"
@@ -44,8 +50,16 @@
       password
       full-width
       outline
-      @click:append="showPassword = !showPassword"
-    />
+      @click:append="showPassword = !showPassword">
+      <v-btn
+        slot="append-outer"
+        color="primary"
+        flat
+        block
+        to="#">
+        Forgot your password?
+      </v-btn>
+    </v-text-field>
 
     <v-btn
       color="primary"
@@ -57,6 +71,8 @@
     >
       {{ loginButtonText }}
     </v-btn>
+
+
   </v-form>
 </template>
 
