@@ -1,5 +1,6 @@
 <template>
   <v-form
+    v-model="isValidForm"
     lazy-validation
   >
     <v-img
@@ -27,7 +28,7 @@
     </div>
 
     <v-text-field
-      label="E-mail Ajddress"
+      label="E-mail Address"
       background-color="white"
       :placeholder="emailPlaceholder"
       full-width
