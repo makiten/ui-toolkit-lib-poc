@@ -1,6 +1,7 @@
 <template>
   <v-form
     v-model="isValidForm"
+    lazy-validation
   >
     <v-img
       class="ml-auto mr-auto"
@@ -30,7 +31,6 @@
       label="E-mail Address"
       background-color="white"
       :placeholder="emailPlaceholder"
-      :error="!isValidForm"
       full-width
       outline
     />
@@ -41,7 +41,6 @@
       :append-icon="showPassword ? 'visibility_off' : 'visibility'"
       :type="showPassword ? 'text' : 'password'"
       :placeholder="passwordPlaceholder"
-      :error="!isValidForm"
       password
       full-width
       outline
