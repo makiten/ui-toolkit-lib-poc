@@ -52,6 +52,6 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="stylus" scoped>
+  $button-text-transform = normal
 </style>
