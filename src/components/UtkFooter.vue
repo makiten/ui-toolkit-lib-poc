@@ -53,5 +53,6 @@
 </script>
 
 <style lang="stylus" scoped>
-  $button-text-transform = normal
+  .v-btn
+    text-transform: normal
 </style>
