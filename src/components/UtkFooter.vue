@@ -4,7 +4,9 @@
     :app="app"
   >
 
-    <span>&copy; {{ copyrightYear }}</span>
+    <slot name="copyright">
+      <span>&copy; {{ copyrightYear }}</span>
+    </slot>
 
     <v-spacer/>
 
@@ -54,5 +56,5 @@
 
 <style lang="stylus" scoped>
   .v-btn
-    text-transform: normal
+    text-transform: none
 </style>
