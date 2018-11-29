@@ -8,15 +8,17 @@
 
     <v-spacer/>
 
-    <v-btn
-      v-for="link in links"
-      :key="link.text"
-      :color="linkColor"
-      :to="link.href"
-      flat
-    >
-      {{ link.text }}
-    </v-btn>
+    <div class="ml-auto">
+      <v-btn
+        v-for="link in links"
+        :key="link.text"
+        :color="linkColor"
+        :to="link.href"
+        flat
+      >
+        {{ link.text }}
+      </v-btn>
+    </div>
 
   </v-footer>
 </template>
