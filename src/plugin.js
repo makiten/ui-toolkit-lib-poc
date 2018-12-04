@@ -4,6 +4,7 @@ import camelCase from 'lodash/camelCase'
 import Vuetify from 'vuetify/lib'
 // import 'vuetify/src/stylus/app.styl'
 import './assets/utk.styl'
+// import 'vuetify/dist/vuetify.min.css'
 import { theme } from './styles'
 
 const requireComponent = require.context(
